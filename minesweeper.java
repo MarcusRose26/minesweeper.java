@@ -2,6 +2,10 @@ import java.util.ArrayList;
 
 public class Minesweeper {
   
+  public static void main(String[] args){
+    int[][] board = generate(10, 10);
+  }
+  
   public static int[][] generate(int r, int c){
     int[][] board = new int[r][c];
     //10% of the board should have mines
@@ -45,6 +49,21 @@ public class Minesweeper {
     }
     return true;
   }
+  
+  public static void printBoard(int[][] board){
+    for (int[] row : board){
+      for (int spot : row){
+        if (spot == -1){
+          System.out.print("X ");
+        }
+        else{
+          System.out.print(spot + " ");
+        }
+      }
+      System.out.println();
+    }
+  }
+  
   
   
 }
