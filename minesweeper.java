@@ -4,6 +4,7 @@ public class Minesweeper {
   
   public static void main(String[] args){
     int[][] board = generate(10, 10);
+    printBoard(board);
   }
   
   public static int[][] generate(int r, int c){
