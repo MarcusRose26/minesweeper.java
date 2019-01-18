@@ -21,4 +21,30 @@ public class Minesweeper {
     return board;
   }
   
+  public static int countMines(int[][] board, int r, int c){
+    int x = 0;
+    if (board[r][c] == -1){
+      return -1;
+    }
+    for (int i = r - 1; i < r + 2; i++){
+      for (int j = c - 1; j < c + 2; j++){
+        if (isValid(board, i, j) && board[i][j] == -1){
+          x++;
+        }
+      }
+    }
+    return x;
+  }
+  
+  public static boolean isValid(int[][] board, int r, int c){
+    if (r < 0 || c < 0){
+      return false;
+    }
+    if (r >= board.length || c >= board[0].length){
+      return false;
+    }
+    return true;
+  }
+  
+  
 }
